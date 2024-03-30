@@ -716,7 +716,6 @@ distributor RS Components</description>
 <part name="C1" library="EGB240" deviceset="CAP-POL" device="RB-D5.0XP2.0" value="100uF"/>
 <part name="GND1" library="EGB240" deviceset="GND" device=""/>
 <part name="R1" library="EGB240" deviceset="RESISTOR-AXIAL" device="HORIZONTAL" value="20k"/>
-<part name="D1" library="EGB240" deviceset="DIODE-DO35" device="DO35-P10.16"/>
 <part name="C2" library="EGB240" deviceset="CAP-POL" device="RB-D5.0XP2.0" value="100nF"/>
 <part name="GND2" library="EGB240" deviceset="GND" device=""/>
 <part name="R2" library="EGB240" deviceset="RESISTOR-AXIAL" device="HORIZONTAL" value="4k"/>
@@ -735,6 +734,7 @@ distributor RS Components</description>
 <attribute name="P" value="2xAA"/>
 </part>
 <part name="S1" library="EGB240" deviceset="SWITCH-SPDT" device=""/>
+<part name="D1" library="EGB240" deviceset="DIODE-DO35" device="DO35-P7.62"/>
 </parts>
 <sheets>
 <sheet>
@@ -756,10 +756,6 @@ distributor RS Components</description>
 <attribute name="NAME" x="29.21" y="90.3986" size="1.778" layer="95"/>
 <attribute name="VALUE" x="29.21" y="85.598" size="1.778" layer="96"/>
 </instance>
-<instance part="D1" gate="G$1" x="73.66" y="88.9" smashed="yes">
-<attribute name="NAME" x="76.2" y="89.3826" size="1.778" layer="95"/>
-<attribute name="VALUE" x="76.2" y="86.5886" size="1.778" layer="96"/>
-</instance>
 <instance part="C2" gate="G$1" x="76.2" y="76.2" smashed="yes">
 <attribute name="NAME" x="77.216" y="76.835" size="1.778" layer="95"/>
 <attribute name="VALUE" x="77.216" y="72.009" size="1.778" layer="96"/>
@@ -771,9 +767,9 @@ distributor RS Components</description>
 <attribute name="NAME" x="100.33" y="113.2586" size="1.778" layer="95"/>
 <attribute name="VALUE" x="100.33" y="108.458" size="1.778" layer="96"/>
 </instance>
-<instance part="D2" gate="G$1" x="71.12" y="33.02" smashed="yes" rot="R180">
-<attribute name="NAME" x="68.58" y="32.5374" size="1.778" layer="95" rot="R180"/>
-<attribute name="VALUE" x="68.58" y="35.3314" size="1.778" layer="96" rot="R180"/>
+<instance part="D2" gate="G$1" x="68.58" y="33.02" smashed="yes" rot="R180">
+<attribute name="NAME" x="66.04" y="32.5374" size="1.778" layer="95" rot="R180"/>
+<attribute name="VALUE" x="66.04" y="35.3314" size="1.778" layer="96" rot="R180"/>
 </instance>
 <instance part="C3" gate="G$1" x="73.66" y="20.32" smashed="yes">
 <attribute name="NAME" x="74.676" y="20.955" size="1.778" layer="95"/>
@@ -821,6 +817,10 @@ distributor RS Components</description>
 <instance part="U1" gate="C" x="101.6" y="33.02" smashed="yes">
 <attribute name="NAME" x="102.87" y="36.195" size="1.778" layer="95"/>
 <attribute name="VALUE" x="102.87" y="27.94" size="1.778" layer="96"/>
+</instance>
+<instance part="D1" gate="G$1" x="68.58" y="88.9" smashed="yes">
+<attribute name="NAME" x="71.12" y="89.3826" size="1.778" layer="95"/>
+<attribute name="VALUE" x="71.12" y="86.5886" size="1.778" layer="96"/>
 </instance>
 </instances>
 <busses>
@@ -875,28 +875,26 @@ distributor RS Components</description>
 <wire x1="53.34" y1="66.04" x2="60.96" y2="66.04" width="0.1524" layer="91"/>
 <junction x="53.34" y="66.04"/>
 <wire x1="60.96" y1="66.04" x2="60.96" y2="88.9" width="0.1524" layer="91"/>
-<wire x1="60.96" y1="88.9" x2="71.12" y2="88.9" width="0.1524" layer="91"/>
-<pinref part="D1" gate="G$1" pin="A"/>
 <wire x1="60.96" y1="66.04" x2="60.96" y2="33.02" width="0.1524" layer="91"/>
 <junction x="60.96" y="66.04"/>
-<wire x1="60.96" y1="33.02" x2="68.58" y2="33.02" width="0.1524" layer="91"/>
-<pinref part="D2" gate="G$1" pin="A"/>
 <pinref part="D2" gate="G$1" pin="K"/>
-<wire x1="68.58" y1="33.02" x2="73.66" y2="33.02" width="0.1524" layer="91"/>
-<junction x="68.58" y="33.02"/>
+<wire x1="60.96" y1="33.02" x2="66.04" y2="33.02" width="0.1524" layer="91"/>
+<pinref part="D1" gate="G$1" pin="A"/>
+<wire x1="60.96" y1="88.9" x2="66.04" y2="88.9" width="0.1524" layer="91"/>
 </segment>
 </net>
 <net name="N$3" class="0">
 <segment>
 <pinref part="C2" gate="G$1" pin="1"/>
 <wire x1="76.2" y1="78.74" x2="76.2" y2="88.9" width="0.1524" layer="91"/>
-<wire x1="76.2" y1="88.9" x2="93.98" y2="88.9" width="0.1524" layer="91"/>
 <wire x1="76.2" y1="88.9" x2="76.2" y2="111.76" width="0.1524" layer="91"/>
-<junction x="76.2" y="88.9"/>
 <wire x1="76.2" y1="111.76" x2="99.06" y2="111.76" width="0.1524" layer="91"/>
 <pinref part="R2" gate="G$1" pin="1"/>
 <pinref part="D1" gate="G$1" pin="K"/>
+<wire x1="71.12" y1="88.9" x2="76.2" y2="88.9" width="0.1524" layer="91"/>
+<junction x="76.2" y="88.9"/>
 <pinref part="U1" gate="B" pin="I"/>
+<wire x1="76.2" y1="88.9" x2="93.98" y2="88.9" width="0.1524" layer="91"/>
 </segment>
 </net>
 <net name="N$4" class="0">
@@ -922,6 +920,8 @@ distributor RS Components</description>
 <wire x1="73.66" y1="55.88" x2="96.52" y2="55.88" width="0.1524" layer="91"/>
 <pinref part="R3" gate="G$1" pin="1"/>
 <pinref part="U1" gate="C" pin="I"/>
+<pinref part="D2" gate="G$1" pin="A"/>
+<wire x1="71.12" y1="33.02" x2="73.66" y2="33.02" width="0.1524" layer="91"/>
 </segment>
 </net>
 <net name="N$6" class="0">
